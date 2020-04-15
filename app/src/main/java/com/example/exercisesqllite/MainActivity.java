@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 Bundle dataBundle = new Bundle();
                 dataBundle.putInt("id", id_To_Search);
 
-                Intent intent = new Intent(getApplicationContext(), displaymhs.class);
+                Intent intent = new Intent(getApplicationContext(), profil.class);
 
                 intent.putExtras(dataBundle);
                 startActivity(intent);

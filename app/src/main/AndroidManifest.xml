@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".displaymhs" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".profil" android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>
