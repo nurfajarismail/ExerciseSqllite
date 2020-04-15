@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -25,7 +23,7 @@
                 android:layout_marginTop="5dp"
                 android:gravity="center"
                 android:text="Daftar Kontak"
-                android:textSize="16dp"
+                android:textSize="25dp"
                 android:textStyle="bold"/>
 
             <ListView
@@ -34,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"/>
         </LinearLayout>
-    </ScrollView>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
