@@ -1,11 +1,13 @@
 package com.example.exercisesqllite;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.content.Intent;
 import android.view.View;
@@ -68,6 +70,20 @@ public class MainActivity extends AppCompatActivity {
 
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.edit:
+                startActivity(new Intent(MainActivity.this, displaymhs.class));
+                return true;
+            case R.id.hapus:
+
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
     }
 
     private void showDialogg() {
