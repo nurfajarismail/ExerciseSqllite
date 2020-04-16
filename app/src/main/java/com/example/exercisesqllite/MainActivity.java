@@ -7,14 +7,10 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.content.Intent;
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -52,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        obj.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                showDialogg();
+                return true;
+            }
+        });
 
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -60,9 +63,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, displaymhs.class));
             }
         });
+
+
     }
 
-    private void showDialoglingkaran(){
+    private void showDialogg() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 this);
 
@@ -75,14 +80,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 switch (which) {
-                    case 0:{
+                    case 0: {
 
 
+                    }
+                    break;
+                    case 1: {
 
-                    }break;
-                    case 1:{
-
-                    }break;
+                    }
+                    break;
                     default:
 
                 }
