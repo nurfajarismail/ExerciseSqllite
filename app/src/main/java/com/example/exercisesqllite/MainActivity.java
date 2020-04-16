@@ -14,6 +14,7 @@ import android.view.View;
 
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        registerForContextMenu(obj);
 
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, displaymhs.class));
                 return true;
             case R.id.hapus:
+                showDialogg();
 
                 return true;
             default:
@@ -89,30 +92,23 @@ public class MainActivity extends AppCompatActivity {
     private void showDialogg() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 this);
-
         // set title dialog
 
-
         // set pesan dari dialog
-        final String[] dialog = {"Hitung Luas", "Hitung Keliling",};
-        alertDialogBuilder.setItems(dialog, new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setMessage("Apakah Anda Yakin Igin Menghapus Data?").setCancelable(false).setPositiveButton("Ya", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                switch (which) {
-                    case 0: {
+                Toast.makeText(MainActivity.this, "Data Berhasil Terhapus", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
 
-
-                    }
-                    break;
-                    case 1: {
-
-                    }
-                    break;
-                    default:
-
-                }
             }
-        });
+        }).setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        })
+        ;
 
         // membuat alert dialog dari builder
         AlertDialog alertDialog = alertDialogBuilder.create();
