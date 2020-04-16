@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onContextItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.edit:
-                startActivity(new Intent(MainActivity.this, displaymhs.class));
+                startActivity(new Intent(MainActivity.this, update.class));
                 return true;
             case R.id.hapus:
                 showDialogg();
